@@ -1,4 +1,4 @@
 function ErrorMessage({ items }) {
-  return <>{items.length === 0 && <h2>No New Stocks</h2>}</>;
+  return <center>{items.length === 0 && <h2>No Fruits Added</h2>}</center>;
 }
 export default ErrorMessage;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import List from "./List";
 
-function ItemList({ items }) {
+function FoodList({ items }) {
   let [activeItems, setActiveItems] = useState([]);
   let onBuyButton = (item, event) => {
     let newItems = [...activeItems, item];
@@ -13,9 +13,9 @@ function ItemList({ items }) {
         {items.map((item) => (
           <List
             key={item}
-            items={item}
+            listofItems={item}
             bought={activeItems.includes(item)}
-            handledButtonClicked={() => onBuyButton(item, event)}
+            HandleButtonOnClick={(event) => onBuyButton(item, event)}
           />
         ))}
       </ul>
@@ -23,4 +23,4 @@ function ItemList({ items }) {
   );
 }
 
-export default ItemList;
+export default FoodList;

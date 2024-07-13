@@ -1,18 +1,15 @@
 import styles from "./List.module.css";
 
-function List({ items }) {
-  const handledButtonClicked = (items) => {
-    console.log(`${items} added to the cart`);
-  };
+function List({ items, bought, handledButtonClicked }) {
   return (
     <>
-      <li className={`${styles["kg-Item"]} list-group-item`}>
+      <li
+        className={`${styles["kg-Item"]} list-group-item ${bought && "active"}`}
+      >
         <span className={styles["kg-span"]}> {items}</span>
         <button
           className={`${styles.button} btn btn-info`}
-          onClick={() => {
-            handledButtonClicked(items);
-          }}
+          onClick={handledButtonClicked}
         >
           Buy
         </button>
